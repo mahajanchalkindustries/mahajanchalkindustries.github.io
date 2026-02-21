@@ -1,0 +1,213 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mahajan Chalk Industries | Since 1958</title>
+    <meta name="description" content="Mahajan Chalk Industries - Superior Quality Chalk Manufacturer Since 1958, Jalandhar Punjab.">
+
+    <style>
+        * { margin:0; padding:0; box-sizing:border-box; font-family:Arial, Helvetica, sans-serif; }
+        body { background:#ffffff; color:#000; line-height:1.6; }
+
+        header {
+            background:#0B3D2E;
+            color:white;
+            padding:15px 8%;
+            display:flex;
+            justify-content:space-between;
+            align-items:center;
+        }
+
+        nav a {
+            color:white;
+            text-decoration:none;
+            margin-left:20px;
+            font-weight:bold;
+        }
+        nav a:hover { color:#f4b400; }
+
+        section { padding:70px 8%; }
+
+        /* HERO SLIDESHOW */
+        .hero {
+            position:relative;
+            color:white;
+            text-align:center;
+            overflow:hidden;
+        }
+
+        .slides {
+            position:absolute;
+            width:100%;
+            height:100%;
+            top:0;
+            left:0;
+            z-index:1;
+        }
+
+        .slides img {
+            width:100%;
+            height:100%;
+            object-fit:cover;
+            position:absolute;
+            opacity:0;
+            transition:opacity 1s ease-in-out;
+        }
+
+        .slides img.active { opacity:1; }
+
+        .hero-overlay {
+            position:absolute;
+            top:0;
+            left:0;
+            width:100%;
+            height:100%;
+            background:rgba(11,61,46,0.85);
+            z-index:2;
+        }
+
+        .hero-content {
+            position:relative;
+            z-index:3;
+            padding:120px 20px;
+        }
+
+        .badge {
+            display:inline-block;
+            background:#f4b400;
+            color:black;
+            padding:6px 16px;
+            border-radius:20px;
+            font-weight:bold;
+            margin-bottom:20px;
+        }
+
+        .hero h2 { font-size:46px; margin-bottom:10px; }
+        .tagline { color:#ff7a00; font-size:22px; font-weight:bold; margin-bottom:25px; }
+
+        .features { list-style:none; margin-bottom:30px; font-size:18px; }
+        .features li { margin:10px 0; }
+
+        .btn {
+            display:inline-block;
+            padding:14px 30px;
+            text-decoration:none;
+            font-weight:bold;
+            margin:10px;
+            color:white;
+        }
+
+        .whatsapp-btn { background:#25D366; }
+        .whatsapp-btn:hover { background:#1ebe5d; }
+
+        .email-btn { background:#ff7a00; }
+        .email-btn:hover { background:#e86c00; }
+
+        h3 { font-size:30px; color:#0B3D2E; margin-bottom:20px; }
+
+        .product-box {
+            border:1px solid #ddd;
+            padding:25px;
+            background:#fff8dc;
+        }
+
+        iframe { width:100%; height:250px; border:0; margin-top:20px; }
+
+        footer {
+            background:#000;
+            color:white;
+            text-align:center;
+            padding:15px;
+        }
+
+        @media(max-width:768px){
+            .hero h2 { font-size:30px; }
+            header { flex-direction:column; align-items:flex-start; }
+            nav a { display:block; margin:5px 0; }
+        }
+    </style>
+</head>
+<body>
+
+<header>
+    <h1>Mahajan Chalk Industries</h1>
+    <nav>
+        <a href="#home">Home</a>
+        <a href="#about">About Us</a>
+        <a href="#products">Products</a>
+        <a href="#contact">Contact</a>
+    </nav>
+</header>
+
+<section class="hero" id="home">
+
+    <div class="slides">
+        <!-- Replace these image names with your product images -->
+        <img src="slide1.jpg" class="active">
+        <img src="slide2.jpg">
+        <img src="slide3.jpg">
+    </div>
+
+    <div class="hero-overlay"></div>
+
+    <div class="hero-content">
+        <div class="badge">Since 1958</div>
+        <h2>Mahajan Chalk Industries</h2>
+        <div class="tagline">Superior Quality Chalk</div>
+        <ul class="features">
+            <li>Dustless</li>
+            <li>Smooth Writing</li>
+            <li>40 Sticks Pack</li>
+            <li>Ideal for Schools</li>
+        </ul>
+        <a href="https://wa.me/919876200666" target="_blank" class="btn whatsapp-btn">Chat on WhatsApp</a>
+        <a href="mailto:mci.tmsc@gmail.com" class="btn email-btn">Email Us</a>
+    </div>
+</section>
+
+<section id="about">
+    <h3>About Us</h3>
+    <p>Established in 1958, Mahajan Chalk Industries has been a trusted manufacturer of high-quality chalk for over six decades. Based in Jalandhar, Punjab, we proudly supply schools, wholesalers, and distributors across India.</p>
+    <p>Our commitment to quality, consistency, and long-term partnerships has made us a reliable name in the education supplies industry.</p>
+</section>
+
+<section id="products">
+    <h3>Our Products</h3>
+    <div class="product-box">
+        <h4>40-Stick White Chalk Box</h4>
+        <ul>
+            <li>Premium Quality</li>
+            <li>Low Dust</li>
+            <li>Strong & Break-Resistant</li>
+            <li>Smooth Writing Performance</li>
+        </ul>
+    </div>
+</section>
+
+<section id="contact">
+    <h3>Contact Us</h3>
+    <p><strong>Location:</strong> Jalandhar, Punjab – 144002</p>
+    <p><strong>Phone:</strong> +91 9876200666</p>
+    <p><strong>Email:</strong> mci.tmsc@gmail.com</p>
+
+    <iframe src="https://www.google.com/maps?q=Jalandhar,Punjab,144002&output=embed"></iframe>
+</section>
+
+<footer>
+    © 2025 Mahajan Chalk Industries. All Rights Reserved.
+</footer>
+
+<script>
+    let slides = document.querySelectorAll('.slides img');
+    let index = 0;
+
+    setInterval(() => {
+        slides[index].classList.remove('active');
+        index = (index + 1) % slides.length;
+        slides[index].classList.add('active');
+    }, 3000);
+</script>
+
+</body>
+</html>
