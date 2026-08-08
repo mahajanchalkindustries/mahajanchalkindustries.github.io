@@ -1,0 +1,17 @@
+mahajan-chalk-industries/
+│
+├── index.html
+│
+├── css/
+│   └── style.css
+│
+├── js/
+│   └── main.js
+│
+└── assets/
+    ├── images/
+    │   ├── slide1.jpg
+    │   ├── slide2.jpg
+    │   └── slide3.jpg
+    │
+    └── logo/
