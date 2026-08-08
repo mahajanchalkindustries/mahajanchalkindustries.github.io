@@ -1,0 +1,1375 @@
+/* =========================================================
+   MAHAJAN CHALK INDUSTRIES
+   Main Website Styles
+   ========================================================= */
+
+
+/* =========================
+   DESIGN VARIABLES
+   ========================= */
+
+:root {
+
+    --blue-900: #082f63;
+    --blue-800: #0b3f82;
+    --blue-700: #0b4ea2;
+    --blue-600: #1764bd;
+
+    --gold: #d6a63c;
+    --gold-light: #f0cf75;
+
+    --dark: #111827;
+    --text: #374151;
+    --muted: #6b7280;
+
+    --white: #ffffff;
+    --off-white: #f7f9fc;
+    --border: #e5e7eb;
+
+    --whatsapp: #25d366;
+
+    --container: 1180px;
+
+    --shadow-small:
+        0 8px 25px rgba(0, 0, 0, 0.06);
+
+    --shadow-medium:
+        0 18px 45px rgba(0, 0, 0, 0.10);
+
+    --transition:
+        0.3s ease;
+}
+
+
+/* =========================
+   RESET
+   ========================= */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+
+html {
+    scroll-behavior: smooth;
+}
+
+
+body {
+
+    font-family:
+        Arial,
+        Helvetica,
+        sans-serif;
+
+    background: var(--white);
+
+    color: var(--text);
+
+    line-height: 1.6;
+
+    overflow-x: hidden;
+}
+
+
+img {
+    max-width: 100%;
+    display: block;
+}
+
+
+a {
+    color: inherit;
+}
+
+
+button,
+a {
+    -webkit-tap-highlight-color: transparent;
+}
+
+
+/* =========================
+   CONTAINER
+   ========================= */
+
+.container {
+
+    width: min(
+        calc(100% - 40px),
+        var(--container)
+    );
+
+    margin-inline: auto;
+}
+
+
+/* =========================
+   HEADER
+   ========================= */
+
+.site-header {
+
+    position: fixed;
+
+    top: 0;
+    left: 0;
+
+    width: 100%;
+
+    z-index: 1000;
+
+    background:
+        /* rgba(8, 47, 99, 0.94); */
+        #01244b;
+    backdrop-filter: blur(12px);
+
+    border-bottom:
+        1px solid rgba(255, 255, 255, 0.12);
+}
+
+
+.header-container {
+
+    min-height: 78px;
+
+    display: flex;
+
+    align-items: center;
+
+    gap: 35px;
+}
+
+
+.brand {
+
+    display: flex;
+
+    flex-direction: column;
+
+    text-decoration: none;
+
+    color: var(--white);
+
+    line-height: 1.05;
+
+    margin-right: auto;
+}
+
+
+.brand-name {
+
+    font-size: 22px;
+
+    font-weight: 800;
+
+    letter-spacing: 1.5px;
+}
+
+
+.brand-subtitle {
+
+    font-size: 10px;
+
+    letter-spacing: 2.5px;
+
+    margin-top: 5px;
+
+    opacity: 0.8;
+}
+
+
+/* =========================
+   DESKTOP NAV
+   ========================= */
+
+.desktop-nav {
+
+    display: flex;
+
+    align-items: center;
+
+    gap: 30px;
+}
+
+
+.desktop-nav a {
+
+    color: var(--white);
+
+    text-decoration: none;
+
+    font-size: 14px;
+
+    font-weight: 600;
+
+    position: relative;
+
+    padding: 8px 0;
+}
+
+
+.desktop-nav a::after {
+
+    content: "";
+
+    position: absolute;
+
+    left: 0;
+    bottom: 0;
+
+    width: 0;
+    height: 2px;
+
+    background: var(--gold);
+
+    transition: width var(--transition);
+}
+
+
+.desktop-nav a:hover::after {
+
+    width: 100%;
+}
+
+
+/* =========================
+   HEADER WHATSAPP
+   ========================= */
+
+.header-whatsapp {
+
+    text-decoration: none;
+
+    background: var(--whatsapp);
+
+    color: var(--white);
+
+    padding: 11px 18px;
+
+    border-radius: 6px;
+
+    font-size: 13px;
+
+    font-weight: 700;
+
+    transition:
+        transform var(--transition),
+        background var(--transition);
+}
+
+
+.header-whatsapp:hover {
+
+    background: #1ebe5d;
+
+    transform: translateY(-2px);
+}
+
+
+/* =========================
+   MOBILE MENU
+   ========================= */
+
+.mobile-menu-button {
+
+    display: none;
+
+    background: transparent;
+
+    border: 0;
+
+    color: var(--white);
+
+    font-size: 28px;
+
+    cursor: pointer;
+}
+
+
+.mobile-nav {
+
+    display: none;
+
+    flex-direction: column;
+
+    background: var(--blue-900);
+
+    padding: 10px 20px 20px;
+}
+
+
+.mobile-nav a {
+
+    color: var(--white);
+
+    text-decoration: none;
+
+    padding: 13px 0;
+
+    border-bottom:
+        1px solid rgba(255,255,255,0.1);
+}
+
+
+/* =========================
+   HERO
+   ========================= */
+
+.hero {
+
+    position: relative;
+
+    min-height: 760px;
+
+    display: flex;
+
+    align-items: center;
+
+    color: var(--white);
+
+    overflow: hidden;
+}
+
+
+.hero-slides {
+
+    position: absolute;
+
+    inset: 0;
+
+    z-index: 0;
+}
+
+
+.hero-slide {
+
+    position: absolute;
+
+    inset: 0;
+
+    width: 100%;
+    height: 100%;
+
+    object-fit: cover;
+
+    opacity: 0;
+
+    transition:
+        opacity 1.2s ease-in-out;
+}
+
+
+.hero-slide.active {
+
+    opacity: 1;
+}
+
+
+.hero-overlay {
+
+    position: absolute;
+
+    inset: 0;
+
+    z-index: 1;
+
+    background:
+        linear-gradient(
+            90deg,
+            rgba(5, 28, 61, 0.88) 0%,
+            rgba(8, 47, 99, 0.68) 48%,
+            rgba(8, 47, 99, 0.28) 100%
+        );
+}
+
+
+.hero-content {
+
+    position: relative;
+
+    z-index: 2;
+
+    padding-top: 90px;
+
+    max-width: 760px;
+}
+
+
+.heritage-badge {
+
+    display: inline-flex;
+
+    align-items: center;
+
+    padding: 8px 16px;
+
+    border:
+        1px solid rgba(240, 207, 117, 0.7);
+
+    color: var(--gold-light);
+
+    letter-spacing: 2px;
+
+    font-size: 12px;
+
+    font-weight: 700;
+
+    margin-bottom: 22px;
+
+    text-transform: uppercase;
+}
+
+
+.hero-eyebrow {
+
+    font-size: 14px;
+
+    letter-spacing: 3px;
+
+    font-weight: 700;
+
+    margin-bottom: 12px;
+
+    opacity: 0.85;
+}
+
+
+.hero h1 {
+
+    font-size: clamp(
+        48px,
+        7vw,
+        82px
+    );
+
+    line-height: 1.02;
+
+    letter-spacing: -2px;
+
+    margin-bottom: 25px;
+
+    color: var(--white);
+}
+
+
+.hero-description {
+
+    max-width: 600px;
+
+    font-size: 19px;
+
+    line-height: 1.8;
+
+    color: rgba(255,255,255,0.88);
+
+    margin-bottom: 35px;
+}
+
+
+/* =========================
+   BUTTONS
+   ========================= */
+
+.hero-actions {
+
+    display: flex;
+
+    flex-wrap: wrap;
+
+    gap: 12px;
+}
+
+
+.button {
+
+    display: inline-flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    padding: 14px 24px;
+
+    min-height: 50px;
+
+    text-decoration: none;
+
+    font-weight: 700;
+
+    font-size: 14px;
+
+    border-radius: 5px;
+
+    transition:
+        transform var(--transition),
+        background var(--transition),
+        box-shadow var(--transition);
+}
+
+
+.button:hover {
+
+    transform: translateY(-3px);
+}
+
+
+.button-primary {
+
+    background: var(--gold);
+
+    color: var(--dark);
+
+    box-shadow:
+        0 10px 25px rgba(0,0,0,0.15);
+}
+
+
+.button-primary:hover {
+
+    background: var(--gold-light);
+}
+
+
+.button-whatsapp {
+
+    background: var(--whatsapp);
+
+    color: var(--white);
+}
+
+
+.button-whatsapp:hover {
+
+    background: #1ebe5d;
+}
+
+
+.button-light {
+
+    background: var(--white);
+
+    color: var(--blue-900);
+}
+
+
+/* =========================
+   HERO SCROLL
+   ========================= */
+
+.hero-scroll {
+
+    position: absolute;
+
+    z-index: 3;
+
+    bottom: 30px;
+
+    right: 40px;
+
+    display: flex;
+
+    flex-direction: column;
+
+    align-items: center;
+
+    gap: 5px;
+
+    font-size: 11px;
+
+    letter-spacing: 1px;
+
+    text-transform: uppercase;
+
+    opacity: 0.75;
+}
+
+
+.scroll-arrow {
+
+    font-size: 20px;
+}
+
+
+/* =========================
+   SECTIONS
+   ========================= */
+
+.section {
+
+    padding: 110px 0;
+}
+
+
+.section-light {
+
+    background: var(--off-white);
+}
+
+
+.section-heading {
+
+    margin-bottom: 55px;
+}
+
+
+.section-heading.centered {
+
+    text-align: center;
+}
+
+
+.section-label {
+
+    display: inline-block;
+
+    color: var(--blue-700);
+
+    font-size: 12px;
+
+    font-weight: 800;
+
+    letter-spacing: 3px;
+
+    margin-bottom: 12px;
+}
+
+
+.section-label.light {
+
+    color: var(--gold-light);
+}
+
+
+.section-heading h2 {
+
+    color: var(--dark);
+
+    font-size: clamp(
+        34px,
+        5vw,
+        52px
+    );
+
+    line-height: 1.15;
+
+    letter-spacing: -1px;
+
+    margin-bottom: 15px;
+}
+
+
+.section-heading p {
+
+    color: var(--muted);
+
+    max-width: 650px;
+
+    margin-inline: auto;
+}
+
+
+.heading-line {
+
+    width: 55px;
+
+    height: 3px;
+
+    background: var(--gold);
+
+    margin-top: 20px;
+}
+
+
+/* =========================
+   ABOUT
+   ========================= */
+
+.about-grid {
+
+    display: grid;
+
+    grid-template-columns:
+        1.5fr 1fr;
+
+    gap: 80px;
+
+    align-items: center;
+}
+
+
+.about-content {
+
+    max-width: 680px;
+}
+
+
+.about-content p {
+
+    margin-bottom: 20px;
+
+    color: var(--text);
+}
+
+
+.about-content .large-text {
+
+    font-size: 23px;
+
+    line-height: 1.6;
+
+    color: var(--dark);
+
+    font-weight: 500;
+}
+
+
+.text-link {
+
+    display: inline-block;
+
+    margin-top: 10px;
+
+    color: var(--blue-700);
+
+    font-weight: 700;
+
+    text-decoration: none;
+}
+
+
+.about-highlight {
+
+    min-height: 300px;
+
+    background:
+        linear-gradient(
+            135deg,
+            var(--blue-900),
+            var(--blue-700)
+        );
+
+    color: var(--white);
+
+    display: flex;
+
+    flex-direction: column;
+
+    justify-content: center;
+
+    padding: 50px;
+
+    position: relative;
+
+    overflow: hidden;
+}
+
+
+.about-highlight::after {
+
+    content: "";
+
+    position: absolute;
+
+    width: 200px;
+    height: 200px;
+
+    border-radius: 50%;
+
+    border:
+        1px solid rgba(255,255,255,0.15);
+
+    right: -70px;
+    bottom: -70px;
+}
+
+
+.highlight-number {
+
+    font-size: 78px;
+
+    font-weight: 800;
+
+    line-height: 1;
+
+    color: var(--gold-light);
+
+    margin-bottom: 20px;
+}
+
+
+.highlight-text {
+
+    font-size: 18px;
+
+    max-width: 230px;
+}
+
+
+/* =========================
+   PRODUCTS
+   ========================= */
+
+.products-grid {
+
+    display: grid;
+
+    grid-template-columns:
+        repeat(3, 1fr);
+
+    gap: 25px;
+}
+
+
+.product-card {
+
+    background: var(--white);
+
+    border:
+        1px solid var(--border);
+
+    overflow: hidden;
+
+    transition:
+        transform var(--transition),
+        box-shadow var(--transition);
+}
+
+
+.product-card:hover {
+
+    transform: translateY(-7px);
+
+    box-shadow: var(--shadow-medium);
+}
+
+
+.product-image {
+
+    height: 300px;
+
+    overflow: hidden;
+
+    background: #eef3f9;
+}
+
+
+.product-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+    padding: 15px;
+    transition: transform 0.5s ease;
+}
+
+.product-card:hover .product-image img {
+
+    transform: scale(1.04);
+}
+
+
+.product-content {
+
+    padding: 28px;
+}
+
+
+.product-category {
+
+    font-size: 10px;
+
+    letter-spacing: 2px;
+
+    color: var(--blue-700);
+
+    font-weight: 800;
+}
+
+
+.product-content h3 {
+
+    color: var(--dark);
+
+    font-size: 23px;
+
+    margin:
+        8px 0 12px;
+}
+
+
+.product-content p {
+
+    color: var(--muted);
+
+    margin-bottom: 20px;
+}
+
+
+.product-link {
+
+    color: var(--blue-700);
+
+    font-weight: 700;
+
+    text-decoration: none;
+
+    font-size: 14px;
+}
+
+
+/* =========================
+   QUALITY
+   ========================= */
+
+.quality-grid {
+
+    display: grid;
+
+    grid-template-columns:
+        repeat(4, 1fr);
+
+    border-top:
+        1px solid var(--border);
+
+    border-left:
+        1px solid var(--border);
+}
+
+
+.quality-item {
+
+    padding: 40px 30px;
+
+    border-right:
+        1px solid var(--border);
+
+    border-bottom:
+        1px solid var(--border);
+}
+
+
+.quality-number {
+
+    color: var(--gold);
+
+    font-size: 13px;
+
+    font-weight: 800;
+
+    letter-spacing: 2px;
+
+    margin-bottom: 30px;
+}
+
+
+.quality-item h3 {
+
+    color: var(--dark);
+
+    font-size: 21px;
+
+    margin-bottom: 12px;
+}
+
+
+.quality-item p {
+
+    color: var(--muted);
+
+    font-size: 14px;
+}
+
+
+/* =========================
+   CONTACT
+   ========================= */
+
+.section-blue {
+
+    background:
+        linear-gradient(
+            135deg,
+            var(--blue-900),
+            var(--blue-700)
+        );
+
+    color: var(--white);
+}
+
+
+.contact-grid {
+
+    display: grid;
+
+    grid-template-columns:
+        1.4fr 1fr;
+
+    gap: 80px;
+
+    align-items: center;
+}
+
+
+.contact-content h2 {
+
+    color: var(--white);
+
+    font-size: clamp(
+        38px,
+        5vw,
+        58px
+    );
+
+    line-height: 1.1;
+
+    margin-bottom: 20px;
+}
+
+
+.contact-content > p {
+
+    max-width: 550px;
+
+    color:
+        rgba(255,255,255,0.8);
+
+    margin-bottom: 30px;
+}
+
+
+.contact-actions {
+
+    display: flex;
+
+    flex-wrap: wrap;
+
+    gap: 12px;
+}
+
+
+.contact-info {
+
+    border-left:
+        1px solid rgba(255,255,255,0.2);
+
+    padding-left: 45px;
+}
+
+
+.contact-item {
+
+    margin-bottom: 30px;
+}
+
+
+.contact-label {
+
+    display: block;
+
+    color: var(--gold-light);
+
+    font-size: 11px;
+
+    font-weight: 800;
+
+    letter-spacing: 2px;
+
+    margin-bottom: 8px;
+}
+
+
+.contact-item a {
+
+    color: var(--white);
+
+    text-decoration: none;
+
+    font-size: 17px;
+}
+
+
+.contact-item p {
+
+    color:
+        rgba(255,255,255,0.85);
+}
+
+
+/* =========================
+   MAP
+   ========================= */
+
+.map-section {
+
+    width: 100%;
+}
+
+
+.map-section iframe {
+
+    display: block;
+
+    width: 100%;
+
+    height: 420px;
+
+    border: 0;
+}
+
+
+/* =========================
+   FOOTER
+   ========================= */
+
+.site-footer {
+
+    background: #061d3b;
+
+    color: var(--white);
+
+    padding: 35px 0;
+}
+
+
+.footer-content {
+
+    display: flex;
+
+    justify-content: space-between;
+
+    align-items: center;
+
+    gap: 30px;
+}
+
+
+.footer-brand {
+
+    font-size: 16px;
+
+    font-weight: 800;
+
+    letter-spacing: 1px;
+}
+
+
+.footer-content p {
+
+    color:
+        rgba(255,255,255,0.6);
+
+    font-size: 12px;
+}
+
+
+.footer-right {
+
+    text-align: right;
+}
+
+
+/* =========================
+   RESPONSIVE
+   ========================= */
+
+@media (max-width: 950px) {
+
+    .desktop-nav,
+    .header-whatsapp {
+
+        display: none;
+    }
+
+
+    .mobile-menu-button {
+
+        display: block;
+    }
+
+
+    .mobile-nav.open {
+
+        display: flex;
+    }
+
+
+    .hero {
+
+        min-height: 700px;
+    }
+
+
+    .about-grid,
+    .contact-grid {
+
+        grid-template-columns: 1fr;
+
+        gap: 45px;
+    }
+
+
+    .products-grid {
+
+        grid-template-columns:
+            repeat(2, 1fr);
+    }
+
+
+    .quality-grid {
+
+        grid-template-columns:
+            repeat(2, 1fr);
+    }
+
+
+    .contact-info {
+
+        border-left: 0;
+
+        border-top:
+            1px solid rgba(255,255,255,0.2);
+
+        padding-left: 0;
+
+        padding-top: 30px;
+    }
+}
+
+
+@media (max-width: 650px) {
+
+    .container {
+
+        width: min(
+            calc(100% - 30px),
+            var(--container)
+        );
+    }
+
+
+    .header-container {
+
+        min-height: 68px;
+    }
+
+
+    .brand-name {
+
+        font-size: 18px;
+    }
+
+
+    .brand-subtitle {
+
+        font-size: 8px;
+
+        letter-spacing: 2px;
+    }
+
+
+    .hero {
+
+        min-height: 680px;
+    }
+
+
+    .hero-content {
+
+        padding-top: 70px;
+    }
+
+
+    .hero h1 {
+
+        font-size: 45px;
+
+        letter-spacing: -1px;
+    }
+
+
+    .hero-description {
+
+        font-size: 16px;
+    }
+
+
+    .hero-actions {
+
+        flex-direction: column;
+
+        align-items: stretch;
+
+        max-width: 300px;
+    }
+
+
+    .hero-scroll {
+
+        display: none;
+    }
+
+
+    .section {
+
+        padding: 80px 0;
+    }
+
+
+    .products-grid,
+    .quality-grid {
+
+        grid-template-columns: 1fr;
+    }
+
+
+    .product-image {
+
+        height: 260px;
+    }
+
+
+    .about-highlight {
+
+        min-height: 260px;
+
+        padding: 35px;
+    }
+
+
+    .highlight-number {
+
+        font-size: 60px;
+    }
+
+
+    .footer-content {
+
+        flex-direction: column;
+
+        align-items: flex-start;
+    }
+
+
+    .footer-right {
+
+        text-align: left;
+    }
+
+
+    .map-section iframe {
+
+        height: 320px;
+    }
+}
+.brand-logo {
+    width: 190px;
+    height: auto;
+    display: block;
+}
+@media (max-width: 650px) {
+    .brand-logo {
+        width: 180px;
+    }
+}
